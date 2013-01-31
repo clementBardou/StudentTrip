@@ -1,5 +1,8 @@
 package org.studenttrip.security
 
+import org.studenttrip.Activite
+import org.studenttrip.Profil
+
 class User {
 
 	transient springSecurityService
@@ -11,6 +14,9 @@ class User {
 	boolean accountLocked
 	boolean passwordExpired
 
+	Profil profil
+	static hasMany = [passions:Activite]
+	
 	static constraints = {
 		username blank: false, unique: true
 		password blank: false
