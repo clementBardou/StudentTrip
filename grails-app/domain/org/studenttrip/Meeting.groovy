@@ -1,6 +1,6 @@
 package org.studenttrip
 
-class User {
+class Meeting {
 
     static constraints = {
     }

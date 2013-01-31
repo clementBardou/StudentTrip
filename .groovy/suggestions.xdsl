@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<projectSuggestions>
+<declaringtype type="org.studenttrip.security.RoleControllerTests">
+<property isActive="true" isStatic="false" name="RoleController" type="java.lang.Object">
+<doc/>
+</property>
+</declaringtype>
+</projectSuggestions>
