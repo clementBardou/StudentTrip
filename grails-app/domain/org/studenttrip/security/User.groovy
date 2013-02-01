@@ -13,6 +13,14 @@ class User {
 	boolean accountExpired
 	boolean accountLocked
 	boolean passwordExpired
+	
+	String sexe
+	Date birthDay
+	String email
+	boolean emailShow
+
+	/** description */
+	String description = ''
 
 	Profil profil
 	static hasMany = [passions:Activite]
@@ -20,6 +28,12 @@ class User {
 	static constraints = {
 		username blank: false, unique: true
 		password blank: false
+		enabled()
+		sexe (inList : ["F","M"])
+
+		Date toDay = new Date();
+		Date minDate = toDay.minus(13*365)
+		birthDay max: minDate
 	}
 
 	static mapping = {
@@ -43,4 +57,5 @@ class User {
 	protected void encodePassword() {
 		password = springSecurityService.encodePassword(password)
 	}
+	
 }
