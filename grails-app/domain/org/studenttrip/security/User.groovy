@@ -8,6 +8,7 @@ class User {
 	transient springSecurityService
 
 	String username
+	String firstname
 	String password
 	boolean enabled
 	boolean accountExpired
@@ -15,12 +16,14 @@ class User {
 	boolean passwordExpired
 	
 	String sexe
+	String telephone
 	Date birthDay
 	String email
 	boolean emailShow
 
 	/** description */
 	String description = ''
+	byte[][] avatar
 
 	Profil profil
 	static hasMany = [passions:Activite]

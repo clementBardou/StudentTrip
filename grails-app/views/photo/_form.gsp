@@ -15,6 +15,14 @@
 		<g:message code="photo.photo.label" default="Photo" />
 		<span class="required-indicator">*</span>
 	</label>
-	<input type="file" id="photo" name="photo" />
+	
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: photoInstance, field: 'datePhoto', 'error')} required">
+	<label for="datePhoto">
+		<g:message code="photo.datePhoto.label" default="Date Photo" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:datePicker name="datePhoto" precision="day"  value="${photoInstance?.datePhoto}"  />
 </div>
 

@@ -24,11 +24,35 @@
 				<thead>
 					<tr>
 					
+						<g:sortableColumn property="intitule" title="${message(code: 'party.intitule.label', default: 'Intitule')}" />
+					
+						<g:sortableColumn property="date" title="${message(code: 'party.date.label', default: 'Date')}" />
+					
+						<g:sortableColumn property="heureDebut" title="${message(code: 'party.heureDebut.label', default: 'Heure Debut')}" />
+					
+						<g:sortableColumn property="heureFin" title="${message(code: 'party.heureFin.label', default: 'Heure Fin')}" />
+					
+						<th><g:message code="party.lieu.label" default="Lieu" /></th>
+					
+						<th><g:message code="party.co_organisateur.label" default="Coorganisateur" /></th>
+					
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${partyInstanceList}" status="i" var="partyInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+					
+						<td><g:link action="show" id="${partyInstance.id}">${fieldValue(bean: partyInstance, field: "intitule")}</g:link></td>
+					
+						<td><g:formatDate date="${partyInstance.date}" /></td>
+					
+						<td><g:formatDate date="${partyInstance.heureDebut}" /></td>
+					
+						<td><g:formatDate date="${partyInstance.heureFin}" /></td>
+					
+						<td>${fieldValue(bean: partyInstance, field: "lieu")}</td>
+					
+						<td>${fieldValue(bean: partyInstance, field: "co_organisateur")}</td>
 					
 					</tr>
 				</g:each>

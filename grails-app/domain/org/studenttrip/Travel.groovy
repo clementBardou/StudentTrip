@@ -1,6 +1,9 @@
 package org.studenttrip
 
-class Travel {
+class Travel extends Events{
+	
+	float prix;
+	String reservation;
 
     static constraints = {
     }

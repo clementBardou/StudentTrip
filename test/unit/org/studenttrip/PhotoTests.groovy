@@ -6,6 +6,7 @@ package org.studenttrip
  */
 
 @TestFor(Photo)
+
 class PhotoTests {
 	
 	void testToString() {

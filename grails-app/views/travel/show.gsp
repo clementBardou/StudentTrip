@@ -23,6 +23,118 @@
 			</g:if>
 			<ol class="property-list travel">
 			
+				<g:if test="${travelInstance?.intitule}">
+				<li class="fieldcontain">
+					<span id="intitule-label" class="property-label"><g:message code="travel.intitule.label" default="Intitule" /></span>
+					
+						<span class="property-value" aria-labelledby="intitule-label"><g:fieldValue bean="${travelInstance}" field="intitule"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${travelInstance?.date}">
+				<li class="fieldcontain">
+					<span id="date-label" class="property-label"><g:message code="travel.date.label" default="Date" /></span>
+					
+						<span class="property-value" aria-labelledby="date-label"><g:formatDate date="${travelInstance?.date}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${travelInstance?.heureDebut}">
+				<li class="fieldcontain">
+					<span id="heureDebut-label" class="property-label"><g:message code="travel.heureDebut.label" default="Heure Debut" /></span>
+					
+						<span class="property-value" aria-labelledby="heureDebut-label"><g:formatDate date="${travelInstance?.heureDebut}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${travelInstance?.heureFin}">
+				<li class="fieldcontain">
+					<span id="heureFin-label" class="property-label"><g:message code="travel.heureFin.label" default="Heure Fin" /></span>
+					
+						<span class="property-value" aria-labelledby="heureFin-label"><g:formatDate date="${travelInstance?.heureFin}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${travelInstance?.lieu}">
+				<li class="fieldcontain">
+					<span id="lieu-label" class="property-label"><g:message code="travel.lieu.label" default="Lieu" /></span>
+					
+						<span class="property-value" aria-labelledby="lieu-label"><g:link controller="adresse" action="show" id="${travelInstance?.lieu?.id}">${travelInstance?.lieu?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${travelInstance?.co_organisateur}">
+				<li class="fieldcontain">
+					<span id="co_organisateur-label" class="property-label"><g:message code="travel.co_organisateur.label" default="Coorganisateur" /></span>
+					
+						<span class="property-value" aria-labelledby="co_organisateur-label"><g:link controller="user" action="show" id="${travelInstance?.co_organisateur?.id}">${travelInstance?.co_organisateur?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${travelInstance?.description}">
+				<li class="fieldcontain">
+					<span id="description-label" class="property-label"><g:message code="travel.description.label" default="Description" /></span>
+					
+						<span class="property-value" aria-labelledby="description-label"><g:fieldValue bean="${travelInstance}" field="description"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${travelInstance?.organisateur}">
+				<li class="fieldcontain">
+					<span id="organisateur-label" class="property-label"><g:message code="travel.organisateur.label" default="Organisateur" /></span>
+					
+						<span class="property-value" aria-labelledby="organisateur-label"><g:link controller="user" action="show" id="${travelInstance?.organisateur?.id}">${travelInstance?.organisateur?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${travelInstance?.participants}">
+				<li class="fieldcontain">
+					<span id="participants-label" class="property-label"><g:message code="travel.participants.label" default="Participants" /></span>
+					
+						<g:each in="${travelInstance.participants}" var="p">
+						<span class="property-value" aria-labelledby="participants-label"><g:link controller="user" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${travelInstance?.photos}">
+				<li class="fieldcontain">
+					<span id="photos-label" class="property-label"><g:message code="travel.photos.label" default="Photos" /></span>
+					
+						<g:each in="${travelInstance.photos}" var="p">
+						<span class="property-value" aria-labelledby="photos-label"><g:link controller="photo" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${travelInstance?.prix}">
+				<li class="fieldcontain">
+					<span id="prix-label" class="property-label"><g:message code="travel.prix.label" default="Prix" /></span>
+					
+						<span class="property-value" aria-labelledby="prix-label"><g:fieldValue bean="${travelInstance}" field="prix"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${travelInstance?.reservation}">
+				<li class="fieldcontain">
+					<span id="reservation-label" class="property-label"><g:message code="travel.reservation.label" default="Reservation" /></span>
+					
+						<span class="property-value" aria-labelledby="reservation-label"><g:fieldValue bean="${travelInstance}" field="reservation"/></span>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form>
 				<fieldset class="buttons">

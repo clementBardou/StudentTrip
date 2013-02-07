@@ -5,16 +5,16 @@ import org.studenttrip.security.User
 class Events {
 
      /*Property*/
-        String nom
+        String intitule
+		String description
         Date date
         Date heureDebut
         Date heureFin
-        Float duree
-        String lieu
-        
+                
         /*Relations between domain classes*/
         User organisateur
 		User co_organisateur
+		Adresse lieu
 		static belongsTo=Activite
         //Activite theme
         static hasMany=[participants:User,photos:Photo]
@@ -22,11 +22,10 @@ class Events {
 
         /*Property Constraints */
     static constraints ={
-                nom (blank:false, nullable:false)
+                intitule (blank:false, nullable:false)
                 date (nullable:false)
                 heureDebut (nullable:false)
                 heureFin (nullable:false)
-                duree (nullable:false)
                 lieu (blank: false, nullable:false)
     }
 
@@ -34,6 +33,6 @@ class Events {
 
 
         String toString(){
-                return date + nom + organisateur + participants.count()
+                return date + intitule + organisateur + participants.count()
         }
 }

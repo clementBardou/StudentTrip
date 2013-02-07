@@ -2,6 +2,22 @@
 
 
 
+<div class="fieldcontain ${hasErrors(bean: groupInstance, field: 'description', 'error')} ">
+	<label for="description">
+		<g:message code="group.description.label" default="Description" />
+		
+	</label>
+	<g:textField name="description" value="${groupInstance?.description}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: groupInstance, field: 'intitule', 'error')} ">
+	<label for="intitule">
+		<g:message code="group.intitule.label" default="Intitule" />
+		
+	</label>
+	<g:textField name="intitule" value="${groupInstance?.intitule}"/>
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: groupInstance, field: 'typeGroup', 'error')} required">
 	<label for="typeGroup">
 		<g:message code="group.typeGroup.label" default="Type Group" />

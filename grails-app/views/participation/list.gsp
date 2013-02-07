@@ -24,11 +24,15 @@
 				<thead>
 					<tr>
 					
+						<g:sortableColumn property="etat" title="${message(code: 'participation.etat.label', default: 'Etat')}" />
+					
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${participationInstanceList}" status="i" var="participationInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+					
+						<td><g:link action="show" id="${participationInstance.id}">${fieldValue(bean: participationInstance, field: "etat")}</g:link></td>
 					
 					</tr>
 				</g:each>

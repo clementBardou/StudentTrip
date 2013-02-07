@@ -24,6 +24,10 @@
 				<thead>
 					<tr>
 					
+						<g:sortableColumn property="description" title="${message(code: 'group.description.label', default: 'Description')}" />
+					
+						<g:sortableColumn property="intitule" title="${message(code: 'group.intitule.label', default: 'Intitule')}" />
+					
 						<g:sortableColumn property="typeGroup" title="${message(code: 'group.typeGroup.label', default: 'Type Group')}" />
 					
 					</tr>
@@ -32,7 +36,11 @@
 				<g:each in="${groupInstanceList}" status="i" var="groupInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${groupInstance.id}">${fieldValue(bean: groupInstance, field: "typeGroup")}</g:link></td>
+						<td><g:link action="show" id="${groupInstance.id}">${fieldValue(bean: groupInstance, field: "description")}</g:link></td>
+					
+						<td>${fieldValue(bean: groupInstance, field: "intitule")}</td>
+					
+						<td>${fieldValue(bean: groupInstance, field: "typeGroup")}</td>
 					
 					</tr>
 				</g:each>

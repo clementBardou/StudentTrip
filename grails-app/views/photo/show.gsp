@@ -39,6 +39,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${photoInstance?.datePhoto}">
+				<li class="fieldcontain">
+					<span id="datePhoto-label" class="property-label"><g:message code="photo.datePhoto.label" default="Date Photo" /></span>
+					
+						<span class="property-value" aria-labelledby="datePhoto-label"><g:formatDate date="${photoInstance?.datePhoto}" /></span>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form>
 				<fieldset class="buttons">

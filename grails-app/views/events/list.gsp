@@ -24,7 +24,7 @@
 				<thead>
 					<tr>
 					
-						<g:sortableColumn property="nom" title="${message(code: 'events.nom.label', default: 'Nom')}" />
+						<g:sortableColumn property="intitule" title="${message(code: 'events.intitule.label', default: 'Intitule')}" />
 					
 						<g:sortableColumn property="date" title="${message(code: 'events.date.label', default: 'Date')}" />
 					
@@ -32,9 +32,9 @@
 					
 						<g:sortableColumn property="heureFin" title="${message(code: 'events.heureFin.label', default: 'Heure Fin')}" />
 					
-						<g:sortableColumn property="duree" title="${message(code: 'events.duree.label', default: 'Duree')}" />
+						<th><g:message code="events.lieu.label" default="Lieu" /></th>
 					
-						<g:sortableColumn property="lieu" title="${message(code: 'events.lieu.label', default: 'Lieu')}" />
+						<th><g:message code="events.co_organisateur.label" default="Coorganisateur" /></th>
 					
 					</tr>
 				</thead>
@@ -42,7 +42,7 @@
 				<g:each in="${eventsInstanceList}" status="i" var="eventsInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${eventsInstance.id}">${fieldValue(bean: eventsInstance, field: "nom")}</g:link></td>
+						<td><g:link action="show" id="${eventsInstance.id}">${fieldValue(bean: eventsInstance, field: "intitule")}</g:link></td>
 					
 						<td><g:formatDate date="${eventsInstance.date}" /></td>
 					
@@ -50,9 +50,9 @@
 					
 						<td><g:formatDate date="${eventsInstance.heureFin}" /></td>
 					
-						<td>${fieldValue(bean: eventsInstance, field: "duree")}</td>
-					
 						<td>${fieldValue(bean: eventsInstance, field: "lieu")}</td>
+					
+						<td>${fieldValue(bean: eventsInstance, field: "co_organisateur")}</td>
 					
 					</tr>
 				</g:each>

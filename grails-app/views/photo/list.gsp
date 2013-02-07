@@ -28,6 +28,8 @@
 					
 						<g:sortableColumn property="photo" title="${message(code: 'photo.photo.label', default: 'Photo')}" />
 					
+						<g:sortableColumn property="datePhoto" title="${message(code: 'photo.datePhoto.label', default: 'Date Photo')}" />
+					
 					</tr>
 				</thead>
 				<tbody>
@@ -37,6 +39,8 @@
 						<td><g:link action="show" id="${photoInstance.id}">${fieldValue(bean: photoInstance, field: "nomPhoto")}</g:link></td>
 					
 						<td>${fieldValue(bean: photoInstance, field: "photo")}</td>
+					
+						<td><g:formatDate date="${photoInstance.datePhoto}" /></td>
 					
 					</tr>
 				</g:each>

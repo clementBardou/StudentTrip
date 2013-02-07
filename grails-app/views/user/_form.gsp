@@ -58,6 +58,14 @@
 	<g:checkBox name="accountLocked" value="${userInstance?.accountLocked}" />
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'avatar', 'error')} required">
+	<label for="avatar">
+		<g:message code="user.avatar.label" default="Avatar" />
+		<span class="required-indicator">*</span>
+	</label>
+	
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: userInstance, field: 'description', 'error')} ">
 	<label for="description">
 		<g:message code="user.description.label" default="Description" />
@@ -82,6 +90,14 @@
 	<g:checkBox name="emailShow" value="${userInstance?.emailShow}" />
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'firstname', 'error')} ">
+	<label for="firstname">
+		<g:message code="user.firstname.label" default="Firstname" />
+		
+	</label>
+	<g:textField name="firstname" value="${userInstance?.firstname}"/>
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: userInstance, field: 'passions', 'error')} ">
 	<label for="passions">
 		<g:message code="user.passions.label" default="Passions" />
@@ -104,5 +120,13 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:select id="profil" name="profil.id" from="${org.studenttrip.Profil.list()}" optionKey="id" required="" value="${userInstance?.profil?.id}" class="many-to-one"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'telephone', 'error')} ">
+	<label for="telephone">
+		<g:message code="user.telephone.label" default="Telephone" />
+		
+	</label>
+	<g:textField name="telephone" value="${userInstance?.telephone}"/>
 </div>
 

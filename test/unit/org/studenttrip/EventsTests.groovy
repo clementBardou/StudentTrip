@@ -5,6 +5,7 @@ package org.studenttrip
  */
 
 @TestFor(Events)
+
 class EventsTests {
 	
 	void testSomething() {

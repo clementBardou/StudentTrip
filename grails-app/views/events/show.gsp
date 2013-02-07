@@ -23,11 +23,11 @@
 			</g:if>
 			<ol class="property-list events">
 			
-				<g:if test="${eventsInstance?.nom}">
+				<g:if test="${eventsInstance?.intitule}">
 				<li class="fieldcontain">
-					<span id="nom-label" class="property-label"><g:message code="events.nom.label" default="Nom" /></span>
+					<span id="intitule-label" class="property-label"><g:message code="events.intitule.label" default="Intitule" /></span>
 					
-						<span class="property-value" aria-labelledby="nom-label"><g:fieldValue bean="${eventsInstance}" field="nom"/></span>
+						<span class="property-value" aria-labelledby="intitule-label"><g:fieldValue bean="${eventsInstance}" field="intitule"/></span>
 					
 				</li>
 				</g:if>
@@ -59,20 +59,11 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${eventsInstance?.duree}">
-				<li class="fieldcontain">
-					<span id="duree-label" class="property-label"><g:message code="events.duree.label" default="Duree" /></span>
-					
-						<span class="property-value" aria-labelledby="duree-label"><g:fieldValue bean="${eventsInstance}" field="duree"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${eventsInstance?.lieu}">
 				<li class="fieldcontain">
 					<span id="lieu-label" class="property-label"><g:message code="events.lieu.label" default="Lieu" /></span>
 					
-						<span class="property-value" aria-labelledby="lieu-label"><g:fieldValue bean="${eventsInstance}" field="lieu"/></span>
+						<span class="property-value" aria-labelledby="lieu-label"><g:link controller="adresse" action="show" id="${eventsInstance?.lieu?.id}">${eventsInstance?.lieu?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>
@@ -82,6 +73,15 @@
 					<span id="co_organisateur-label" class="property-label"><g:message code="events.co_organisateur.label" default="Coorganisateur" /></span>
 					
 						<span class="property-value" aria-labelledby="co_organisateur-label"><g:link controller="user" action="show" id="${eventsInstance?.co_organisateur?.id}">${eventsInstance?.co_organisateur?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${eventsInstance?.description}">
+				<li class="fieldcontain">
+					<span id="description-label" class="property-label"><g:message code="events.description.label" default="Description" /></span>
+					
+						<span class="property-value" aria-labelledby="description-label"><g:fieldValue bean="${eventsInstance}" field="description"/></span>
 					
 				</li>
 				</g:if>

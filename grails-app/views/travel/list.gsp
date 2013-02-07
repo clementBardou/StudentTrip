@@ -24,11 +24,35 @@
 				<thead>
 					<tr>
 					
+						<g:sortableColumn property="intitule" title="${message(code: 'travel.intitule.label', default: 'Intitule')}" />
+					
+						<g:sortableColumn property="date" title="${message(code: 'travel.date.label', default: 'Date')}" />
+					
+						<g:sortableColumn property="heureDebut" title="${message(code: 'travel.heureDebut.label', default: 'Heure Debut')}" />
+					
+						<g:sortableColumn property="heureFin" title="${message(code: 'travel.heureFin.label', default: 'Heure Fin')}" />
+					
+						<th><g:message code="travel.lieu.label" default="Lieu" /></th>
+					
+						<th><g:message code="travel.co_organisateur.label" default="Coorganisateur" /></th>
+					
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${travelInstanceList}" status="i" var="travelInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+					
+						<td><g:link action="show" id="${travelInstance.id}">${fieldValue(bean: travelInstance, field: "intitule")}</g:link></td>
+					
+						<td><g:formatDate date="${travelInstance.date}" /></td>
+					
+						<td><g:formatDate date="${travelInstance.heureDebut}" /></td>
+					
+						<td><g:formatDate date="${travelInstance.heureFin}" /></td>
+					
+						<td>${fieldValue(bean: travelInstance, field: "lieu")}</td>
+					
+						<td>${fieldValue(bean: travelInstance, field: "co_organisateur")}</td>
 					
 					</tr>
 				</g:each>

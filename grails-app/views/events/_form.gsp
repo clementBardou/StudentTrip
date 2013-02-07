@@ -2,12 +2,12 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: eventsInstance, field: 'nom', 'error')} required">
-	<label for="nom">
-		<g:message code="events.nom.label" default="Nom" />
+<div class="fieldcontain ${hasErrors(bean: eventsInstance, field: 'intitule', 'error')} required">
+	<label for="intitule">
+		<g:message code="events.intitule.label" default="Intitule" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="nom" required="" value="${eventsInstance?.nom}"/>
+	<g:textField name="intitule" required="" value="${eventsInstance?.intitule}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: eventsInstance, field: 'date', 'error')} required">
@@ -34,20 +34,12 @@
 	<g:datePicker name="heureFin" precision="day"  value="${eventsInstance?.heureFin}"  />
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: eventsInstance, field: 'duree', 'error')} required">
-	<label for="duree">
-		<g:message code="events.duree.label" default="Duree" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field name="duree" value="${fieldValue(bean: eventsInstance, field: 'duree')}" required=""/>
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: eventsInstance, field: 'lieu', 'error')} required">
 	<label for="lieu">
 		<g:message code="events.lieu.label" default="Lieu" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="lieu" required="" value="${eventsInstance?.lieu}"/>
+	<g:select id="lieu" name="lieu.id" from="${org.studenttrip.Adresse.list()}" optionKey="id" required="" value="${eventsInstance?.lieu?.id}" class="many-to-one"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: eventsInstance, field: 'co_organisateur', 'error')} required">
@@ -56,6 +48,14 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:select id="co_organisateur" name="co_organisateur.id" from="${org.studenttrip.security.User.list()}" optionKey="id" required="" value="${eventsInstance?.co_organisateur?.id}" class="many-to-one"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: eventsInstance, field: 'description', 'error')} ">
+	<label for="description">
+		<g:message code="events.description.label" default="Description" />
+		
+	</label>
+	<g:textField name="description" value="${eventsInstance?.description}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: eventsInstance, field: 'organisateur', 'error')} required">

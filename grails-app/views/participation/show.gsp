@@ -23,6 +23,15 @@
 			</g:if>
 			<ol class="property-list participation">
 			
+				<g:if test="${participationInstance?.etat}">
+				<li class="fieldcontain">
+					<span id="etat-label" class="property-label"><g:message code="participation.etat.label" default="Etat" /></span>
+					
+						<span class="property-value" aria-labelledby="etat-label"><g:fieldValue bean="${participationInstance}" field="etat"/></span>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form>
 				<fieldset class="buttons">

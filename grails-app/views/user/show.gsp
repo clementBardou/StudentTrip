@@ -86,6 +86,13 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${userInstance?.avatar}">
+				<li class="fieldcontain">
+					<span id="avatar-label" class="property-label"><g:message code="user.avatar.label" default="Avatar" /></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${userInstance?.description}">
 				<li class="fieldcontain">
 					<span id="description-label" class="property-label"><g:message code="user.description.label" default="Description" /></span>
@@ -109,6 +116,15 @@
 					<span id="emailShow-label" class="property-label"><g:message code="user.emailShow.label" default="Email Show" /></span>
 					
 						<span class="property-value" aria-labelledby="emailShow-label"><g:formatBoolean boolean="${userInstance?.emailShow}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${userInstance?.firstname}">
+				<li class="fieldcontain">
+					<span id="firstname-label" class="property-label"><g:message code="user.firstname.label" default="Firstname" /></span>
+					
+						<span class="property-value" aria-labelledby="firstname-label"><g:fieldValue bean="${userInstance}" field="firstname"/></span>
 					
 				</li>
 				</g:if>
@@ -138,6 +154,15 @@
 					<span id="profil-label" class="property-label"><g:message code="user.profil.label" default="Profil" /></span>
 					
 						<span class="property-value" aria-labelledby="profil-label"><g:link controller="profil" action="show" id="${userInstance?.profil?.id}">${userInstance?.profil?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${userInstance?.telephone}">
+				<li class="fieldcontain">
+					<span id="telephone-label" class="property-label"><g:message code="user.telephone.label" default="Telephone" /></span>
+					
+						<span class="property-value" aria-labelledby="telephone-label"><g:fieldValue bean="${userInstance}" field="telephone"/></span>
 					
 				</li>
 				</g:if>
