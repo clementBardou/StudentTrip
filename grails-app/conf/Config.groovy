@@ -94,3 +94,12 @@ log4j = {
 grails.plugins.springsecurity.userLookup.userDomainClassName = 'org.studenttrip.security.User'
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'org.studenttrip.security.UserRole'
 grails.plugins.springsecurity.authority.className = 'org.studenttrip.security.Role'
+
+//Configuration et Securisation
+grails.plugins.springsecurity.securityConfigType = "InterceptUrlMap"
+grails.plugins.springsecurity.interceptUrlMap = [
+   '/Events/create/**': ['ROLE_ADMIN','ROLE_USER'],
+   '/user/**'       : ['ROLE_ADMIN'],
+   '/role/**'       : ['ROLE_ADMIN'],
+   '/userRole/**'   : ['ROLE_ADMIN']
+]
