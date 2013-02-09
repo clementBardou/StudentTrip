@@ -4,7 +4,7 @@ class Photo {
 
     String nomPhoto
 	Date datePhoto
-    byte [][] photo
+    byte[] photo
 
     static constraints = {
                 nomPhoto (blank: false, nullable:false)
@@ -13,5 +13,5 @@ class Photo {
 	
 	String toString(){
 		return nomPhoto
-}
+	}
 }
