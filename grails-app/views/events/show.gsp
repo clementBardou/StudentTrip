@@ -32,11 +32,20 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${eventsInstance?.date}">
+				<g:if test="${eventsInstance?.description}">
 				<li class="fieldcontain">
-					<span id="date-label" class="property-label"><g:message code="events.date.label" default="Date" /></span>
+					<span id="description-label" class="property-label"><g:message code="events.description.label" default="Description" /></span>
 					
-						<span class="property-value" aria-labelledby="date-label"><g:formatDate date="${eventsInstance?.date}" /></span>
+						<span class="property-value" aria-labelledby="description-label"><g:fieldValue bean="${eventsInstance}" field="description"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${eventsInstance?.dateDebut}">
+				<li class="fieldcontain">
+					<span id="dateDebut-label" class="property-label"><g:message code="events.dateDebut.label" default="Date Debut" /></span>
+					
+						<span class="property-value" aria-labelledby="dateDebut-label"><g:formatDate date="${eventsInstance?.dateDebut}" /></span>
 					
 				</li>
 				</g:if>
@@ -77,11 +86,11 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${eventsInstance?.description}">
+				<g:if test="${eventsInstance?.dateFin}">
 				<li class="fieldcontain">
-					<span id="description-label" class="property-label"><g:message code="events.description.label" default="Description" /></span>
+					<span id="dateFin-label" class="property-label"><g:message code="events.dateFin.label" default="Date Fin" /></span>
 					
-						<span class="property-value" aria-labelledby="description-label"><g:fieldValue bean="${eventsInstance}" field="description"/></span>
+						<span class="property-value" aria-labelledby="dateFin-label"><g:formatDate date="${eventsInstance?.dateFin}" /></span>
 					
 				</li>
 				</g:if>

@@ -10,12 +10,20 @@
 	<g:textField name="intitule" required="" value="${eventsInstance?.intitule}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: eventsInstance, field: 'date', 'error')} required">
-	<label for="date">
-		<g:message code="events.date.label" default="Date" />
+<div class="fieldcontain ${hasErrors(bean: eventsInstance, field: 'description', 'error')} ">
+	<label for="description">
+		<g:message code="events.description.label" default="Description" />
+		
+	</label>
+	<g:textField name="description" maxlength="50" value="${eventsInstance?.description}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: eventsInstance, field: 'dateDebut', 'error')} required">
+	<label for="dateDebut">
+		<g:message code="events.dateDebut.label" default="Date Debut" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:datePicker name="date" precision="day"  value="${eventsInstance?.date}"  />
+	<g:datePicker name="dateDebut" precision="day"  value="${eventsInstance?.dateDebut}"  />
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: eventsInstance, field: 'heureDebut', 'error')} required">
@@ -50,12 +58,12 @@
 	<g:select id="co_organisateur" name="co_organisateur.id" from="${org.studenttrip.security.User.list()}" optionKey="id" required="" value="${eventsInstance?.co_organisateur?.id}" class="many-to-one"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: eventsInstance, field: 'description', 'error')} ">
-	<label for="description">
-		<g:message code="events.description.label" default="Description" />
-		
+<div class="fieldcontain ${hasErrors(bean: eventsInstance, field: 'dateFin', 'error')} required">
+	<label for="dateFin">
+		<g:message code="events.dateFin.label" default="Date Fin" />
+		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="description" value="${eventsInstance?.description}"/>
+	<g:datePicker name="dateFin" precision="day"  value="${eventsInstance?.dateFin}"  />
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: eventsInstance, field: 'organisateur', 'error')} required">
