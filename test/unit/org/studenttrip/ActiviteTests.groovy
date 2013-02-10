@@ -55,8 +55,8 @@ class ActiviteTests extends GrailsUnitTestCase {
 	
 	void testCountPassionnee(){
 		
-		def nbUser = activite.countPassionnees()
-		assertEquals(2,nbUser)
+		def nbPassionnee = activite.countPassionnees()
+		assertEquals(2,nbPassionnee)
 	}
 	
 
