@@ -11,5 +11,7 @@ class Groupement {
 	TypeGroup typeGroup 
 
 	static constraints = {
+		intitule (blank:false, nullable:false)
+		description (blank: false, nullable:false)
     }
 }

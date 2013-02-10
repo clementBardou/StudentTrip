@@ -55,13 +55,14 @@ grails.project.dependency.resolution = {
 		compile ':spring-security-core:1.2.7.3'
     }
 	
-	coverage {
-		exclusions = ['**/grails-app/conf/**',
+	coverage{
+	 exclusions = ['**/grails-app/conf/**',
 			'*.class',
-			'org/studenttrip/**Controller.class',
+			'org/studenttrip/**Controller*.class',
 			'org/studenttrip/security/Role*.class',
 			'org/studenttrip/security/UserRole*.class']
 		xml = true
 		enabledByDefault = false
-}
+	}
+
 }

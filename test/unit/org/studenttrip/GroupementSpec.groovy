@@ -1,26 +1,47 @@
 package org.studenttrip
 
-import static org.junit.Assert.*
+import grails.test.GrailsUnitTestCase;
 
-import grails.test.mixin.*
-import grails.test.mixin.support.*
-import org.junit.*
 
 /**
  * See the API for {@link grails.test.mixin.support.GrailsUnitTestMixin} for usage instructions
  */
-@TestMixin(GrailsUnitTestMixin)
-class GroupementSpec {
 
-    void setUp() {
-        // Setup logic here
-    }
+class GroupementSpec extends GrailsUnitTestCase {
 
-    void tearDown() {
-        // Tear down logic here
-    }
+	def groupement
+	void setUp() {
+		super.setUp()
+		mockForConstraintsTests(Groupement)
+		groupement = new Groupement(intitule:"unIntitule",description:"uneDescription",
+			typeGroup:TypeGroup.ANNEE)
+	}
 
-    void testSomething() {
-        
-    }
+	void tearDown() {
+		super.tearDown()
+	}
+
+	void testConstraintsIntituleBlanck() {
+		assertTrue(groupement.validate())
+		groupement.intitule = ""
+		assertFalse(groupement.validate())
+	}
+
+	void testConstraintsIntituleNullable() {
+		assertTrue(groupement.validate())
+		groupement.intitule = null
+		assertFalse(groupement.validate())
+	}
+	
+	void testConstraintsDescriptionBlanck() {
+		assertTrue(groupement.validate())
+		groupement.description = ""
+		assertFalse(groupement.validate())
+	}
+
+	void testConstraintsDescriptionNullable() {
+		assertTrue(groupement.validate())
+		groupement.description = null
+		assertFalse(groupement.validate())
+	}
 }

@@ -24,7 +24,7 @@ class Activite {
             passionnees.size();
         }
 
-        List mailPassioonnees(){
+        List mailPassionnees(){
             List usersMails = []
             passionnees.each {
                 usersMails.add(it.email)
