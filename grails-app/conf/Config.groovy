@@ -98,7 +98,16 @@ grails.plugins.springsecurity.authority.className = 'org.studenttrip.security.Ro
 //Configuration et Securisation
 grails.plugins.springsecurity.securityConfigType = "InterceptUrlMap"
 grails.plugins.springsecurity.interceptUrlMap = [
-   '/Events/create/**': ['ROLE_ADMIN','ROLE_USER'],
+   '/Events/**': ['ROLE_ADMIN','ROLE_USER'],
+   '/Activite/**': ['ROLE_ADMIN','ROLE_USER'],
+   '/Adresse/**': ['ROLE_ADMIN','ROLE_USER'],
+   '/Groupement/**': ['ROLE_ADMIN','ROLE_USER'],
+   '/Meeting/**': ['ROLE_ADMIN','ROLE_USER'],
+   '/Participation/**': ['ROLE_ADMIN','ROLE_USER'],
+   '/Party/**': ['ROLE_ADMIN','ROLE_USER'],
+   '/Photo/**': ['ROLE_ADMIN','ROLE_USER'],
+   '/Profil/**': ['ROLE_ADMIN','ROLE_USER'],
+   '/Travel/**': ['ROLE_ADMIN','ROLE_USER'],
    '/user/**'       : ['ROLE_ADMIN'],
    '/role/**'       : ['ROLE_ADMIN'],
    '/userRole/**'   : ['ROLE_ADMIN']

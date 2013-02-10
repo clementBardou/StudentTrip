@@ -12,7 +12,7 @@ class ParticipationControllerTests {
 	void testSomething() {
 	
   }
-	/*def populateValidParams(params) {
+	 /*def populateValidParams(params) {
         assert params != null
         // TODO: Populate valid properties like...
         //params["name"] = 'someValidName'

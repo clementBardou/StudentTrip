@@ -8,12 +8,11 @@ import grails.test.mixin.*
 @TestFor(ActiviteController)
 @Mock(Activite)
 class ActiviteControllerTests {
-	
+
 	void testSomething() {
 	
   }
-
-    /*def populateValidParams(params) {
+	/*def populateValidParams(params) {
         assert params != null
         // TODO: Populate valid properties like...
         //params["name"] = 'someValidName'

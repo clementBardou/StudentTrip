@@ -59,6 +59,31 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${userInstance?.avatar}">
+				<li class="fieldcontain">
+					<span id="avatar-label" class="property-label"><g:message code="user.avatar.label" default="Avatar" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${userInstance?.birthDay}">
+				<li class="fieldcontain">
+					<span id="birthDay-label" class="property-label"><g:message code="user.birthDay.label" default="Birth Day" /></span>
+					
+						<span class="property-value" aria-labelledby="birthDay-label"><g:formatDate date="${userInstance?.birthDay}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${userInstance?.email}">
+				<li class="fieldcontain">
+					<span id="email-label" class="property-label"><g:message code="user.email.label" default="Email" /></span>
+					
+						<span class="property-value" aria-labelledby="email-label"><g:fieldValue bean="${userInstance}" field="email"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${userInstance?.enabled}">
 				<li class="fieldcontain">
 					<span id="enabled-label" class="property-label"><g:message code="user.enabled.label" default="Enabled" /></span>
@@ -68,11 +93,42 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${userInstance?.passions}">
+				<li class="fieldcontain">
+					<span id="passions-label" class="property-label"><g:message code="user.passions.label" default="Passions" /></span>
+					
+						<g:each in="${userInstance.passions}" var="p">
+						<span class="property-value" aria-labelledby="passions-label"><g:link controller="activite" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${userInstance?.passwordExpired}">
 				<li class="fieldcontain">
 					<span id="passwordExpired-label" class="property-label"><g:message code="user.passwordExpired.label" default="Password Expired" /></span>
 					
 						<span class="property-value" aria-labelledby="passwordExpired-label"><g:formatBoolean boolean="${userInstance?.passwordExpired}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${userInstance?.photos}">
+				<li class="fieldcontain">
+					<span id="photos-label" class="property-label"><g:message code="user.photos.label" default="Photos" /></span>
+					
+						<g:each in="${userInstance.photos}" var="p">
+						<span class="property-value" aria-labelledby="photos-label"><g:link controller="photo" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${userInstance?.telephone}">
+				<li class="fieldcontain">
+					<span id="telephone-label" class="property-label"><g:message code="user.telephone.label" default="Telephone" /></span>
+					
+						<span class="property-value" aria-labelledby="telephone-label"><g:fieldValue bean="${userInstance}" field="telephone"/></span>
 					
 				</li>
 				</g:if>

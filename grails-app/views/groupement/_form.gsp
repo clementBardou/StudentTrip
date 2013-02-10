@@ -2,20 +2,20 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: groupementInstance, field: 'description', 'error')} ">
-	<label for="description">
-		<g:message code="groupement.description.label" default="Description" />
-		
-	</label>
-	<g:textField name="description" value="${groupementInstance?.description}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: groupementInstance, field: 'intitule', 'error')} ">
+<div class="fieldcontain ${hasErrors(bean: groupementInstance, field: 'intitule', 'error')} required">
 	<label for="intitule">
 		<g:message code="groupement.intitule.label" default="Intitule" />
-		
+		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="intitule" value="${groupementInstance?.intitule}"/>
+	<g:textField name="intitule" required="" value="${groupementInstance?.intitule}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: groupementInstance, field: 'description', 'error')} required">
+	<label for="description">
+		<g:message code="groupement.description.label" default="Description" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField name="description" required="" value="${groupementInstance?.description}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: groupementInstance, field: 'typeGroup', 'error')} required">
