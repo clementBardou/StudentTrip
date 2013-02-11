@@ -7,7 +7,7 @@ import grails.test.GrailsUnitTestCase;
  * See the API for {@link grails.test.mixin.support.GrailsUnitTestMixin} for usage instructions
  */
 
-class GroupementSpec extends GrailsUnitTestCase {
+class GroupementTests extends GrailsUnitTestCase {
 
 	def groupement
 	void setUp() {
