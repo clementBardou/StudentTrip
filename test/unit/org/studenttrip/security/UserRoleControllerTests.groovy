@@ -9,7 +9,7 @@ import grails.test.mixin.*
 @Mock(UserRole)
 class UserRoleControllerTests {
 
-    def populateValidParams(params) {
+    /*def populateValidParams(params) {
         assert params != null
         // TODO: Populate valid properties like...
         //params["name"] = 'someValidName'
@@ -151,5 +151,5 @@ class UserRoleControllerTests {
         assert UserRole.count() == 0
         assert UserRole.get(userRole.id) == null
         assert response.redirectedUrl == '/userRole/list'
-    }
+    }*/
 }
