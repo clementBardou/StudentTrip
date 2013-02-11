@@ -34,30 +34,6 @@
 	<g:checkBox name="accountLocked" value="${userInstance?.accountLocked}" />
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'avatar', 'error')} required">
-	<label for="avatar">
-		<g:message code="user.avatar.label" default="Avatar" />
-		<span class="required-indicator">*</span>
-	</label>
-	
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'birthDay', 'error')} required">
-	<label for="birthDay">
-		<g:message code="user.birthDay.label" default="Birth Day" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:datePicker name="birthDay" precision="day"  value="${userInstance?.birthDay}"  />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'email', 'error')} ">
-	<label for="email">
-		<g:message code="user.email.label" default="Email" />
-		
-	</label>
-	<g:textField name="email" value="${userInstance?.email}"/>
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: userInstance, field: 'enabled', 'error')} ">
 	<label for="enabled">
 		<g:message code="user.enabled.label" default="Enabled" />
@@ -66,35 +42,11 @@
 	<g:checkBox name="enabled" value="${userInstance?.enabled}" />
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'passions', 'error')} ">
-	<label for="passions">
-		<g:message code="user.passions.label" default="Passions" />
-		
-	</label>
-	<g:select name="passions" from="${org.studenttrip.Activite.list()}" multiple="multiple" optionKey="id" size="5" value="${userInstance?.passions*.id}" class="many-to-many"/>
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: userInstance, field: 'passwordExpired', 'error')} ">
 	<label for="passwordExpired">
 		<g:message code="user.passwordExpired.label" default="Password Expired" />
 		
 	</label>
 	<g:checkBox name="passwordExpired" value="${userInstance?.passwordExpired}" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'photos', 'error')} ">
-	<label for="photos">
-		<g:message code="user.photos.label" default="Photos" />
-		
-	</label>
-	<g:select name="photos" from="${org.studenttrip.Photo.list()}" multiple="multiple" optionKey="id" size="5" value="${userInstance?.photos*.id}" class="many-to-many"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'telephone', 'error')} ">
-	<label for="telephone">
-		<g:message code="user.telephone.label" default="Telephone" />
-		
-	</label>
-	<g:textField name="telephone" value="${userInstance?.telephone}"/>
 </div>
 

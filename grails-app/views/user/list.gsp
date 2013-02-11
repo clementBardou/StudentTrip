@@ -32,9 +32,9 @@
 					
 						<g:sortableColumn property="accountLocked" title="${message(code: 'user.accountLocked.label', default: 'Account Locked')}" />
 					
-						<g:sortableColumn property="avatar" title="${message(code: 'user.avatar.label', default: 'Avatar')}" />
+						<g:sortableColumn property="enabled" title="${message(code: 'user.enabled.label', default: 'Enabled')}" />
 					
-						<g:sortableColumn property="birthDay" title="${message(code: 'user.birthDay.label', default: 'Birth Day')}" />
+						<g:sortableColumn property="passwordExpired" title="${message(code: 'user.passwordExpired.label', default: 'Password Expired')}" />
 					
 					</tr>
 				</thead>
@@ -50,9 +50,9 @@
 					
 						<td><g:formatBoolean boolean="${userInstance.accountLocked}" /></td>
 					
-						<td>${fieldValue(bean: userInstance, field: "avatar")}</td>
+						<td><g:formatBoolean boolean="${userInstance.enabled}" /></td>
 					
-						<td><g:formatDate date="${userInstance.birthDay}" /></td>
+						<td><g:formatBoolean boolean="${userInstance.passwordExpired}" /></td>
 					
 					</tr>
 				</g:each>
