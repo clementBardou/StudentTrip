@@ -21,6 +21,10 @@ class UserController {
 
     def save() {
         def userInstance = new User(params)
+		userInstance.setAccountExpired(false)
+		userInstance.setAccountLocked(false)
+		userInstance.setEnabled(true)
+		userInstance.setPasswordExpired(false)
         if (!userInstance.save(flush: true)) {
             render(view: "create", model: [userInstance: userInstance])
             return
