@@ -100,6 +100,10 @@
 				</ul>
 				</sec:ifNotLoggedIn>
 				<sec:ifLoggedIn>
+					<g:link controller="Photo" action="create">Creer une Photo</g:link>
+					
+					
+					
 					<g:link controller="Logout">Déconnexion</g:link>
 				</sec:ifLoggedIn>
 			</div>

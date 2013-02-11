@@ -25,12 +25,14 @@ class UserController {
 		userInstance.setAccountLocked(false)
 		userInstance.setEnabled(true)
 		userInstance.setPasswordExpired(false)
-        if (!userInstance.save(flush: true)) {
+		if (!userInstance.save(flush: true)) {
             render(view: "create", model: [userInstance: userInstance])
             return
+        } else {
+			Role userRole = Role.findByAuthority('ROLE_USER')
+			UserRole.create(userInstance, userRole)
         }
-
-        flash.message = message(code: 'default.created.message', args: [message(code: 'user.label', default: 'User'), userInstance.id])
+		flash.message = message(code: 'default.created.message', args: [message(code: 'user.label', default: 'User'), userInstance.id])
         redirect(action: "show", id: userInstance.id)
     }
 
