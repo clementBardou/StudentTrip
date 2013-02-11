@@ -9,10 +9,7 @@ import grails.test.mixin.*
 @Mock(Events)
 class EventsControllerTests {
 
-	void testSomething() {
-	
-  }
-	/* def populateValidParams(params) {
+    def populateValidParams(params) {
         assert params != null
         // TODO: Populate valid properties like...
         //params["name"] = 'someValidName'
@@ -154,5 +151,5 @@ class EventsControllerTests {
         assert Events.count() == 0
         assert Events.get(events.id) == null
         assert response.redirectedUrl == '/events/list'
-    }*/
+    }
 }
