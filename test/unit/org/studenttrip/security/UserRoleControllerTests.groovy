@@ -9,7 +9,10 @@ import grails.test.mixin.*
 @Mock(UserRole)
 class UserRoleControllerTests {
 
-    /*def populateValidParams(params) {
+	void testSomething() {
+	
+  }
+	/*def populateValidParams(params) {
         assert params != null
         // TODO: Populate valid properties like...
         //params["name"] = 'someValidName'
