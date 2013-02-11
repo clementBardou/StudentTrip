@@ -12,7 +12,6 @@ class RoleControllerTests {
 	void testSomething() {
 	
   }
-
    /* def populateValidParams(params) {
         assert params != null
         // TODO: Populate valid properties like...

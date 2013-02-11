@@ -7,7 +7,6 @@ import grails.test.mixin.*
 
 @TestFor(UserRoleController)
 @Mock(UserRole)
-
 class UserRoleControllerTests {
 
 	void testSomething() {

@@ -23,20 +23,20 @@
 			</g:if>
 			<ol class="property-list groupement">
 			
-				<g:if test="${groupementInstance?.description}">
-				<li class="fieldcontain">
-					<span id="description-label" class="property-label"><g:message code="groupement.description.label" default="Description" /></span>
-					
-						<span class="property-value" aria-labelledby="description-label"><g:fieldValue bean="${groupementInstance}" field="description"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${groupementInstance?.intitule}">
 				<li class="fieldcontain">
 					<span id="intitule-label" class="property-label"><g:message code="groupement.intitule.label" default="Intitule" /></span>
 					
 						<span class="property-value" aria-labelledby="intitule-label"><g:fieldValue bean="${groupementInstance}" field="intitule"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${groupementInstance?.description}">
+				<li class="fieldcontain">
+					<span id="description-label" class="property-label"><g:message code="groupement.description.label" default="Description" /></span>
+					
+						<span class="property-value" aria-labelledby="description-label"><g:fieldValue bean="${groupementInstance}" field="description"/></span>
 					
 				</li>
 				</g:if>

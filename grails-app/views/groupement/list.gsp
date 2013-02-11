@@ -24,9 +24,9 @@
 				<thead>
 					<tr>
 					
-						<g:sortableColumn property="description" title="${message(code: 'groupement.description.label', default: 'Description')}" />
-					
 						<g:sortableColumn property="intitule" title="${message(code: 'groupement.intitule.label', default: 'Intitule')}" />
+					
+						<g:sortableColumn property="description" title="${message(code: 'groupement.description.label', default: 'Description')}" />
 					
 						<g:sortableColumn property="typeGroup" title="${message(code: 'groupement.typeGroup.label', default: 'Type Group')}" />
 					
@@ -36,9 +36,9 @@
 				<g:each in="${groupementInstanceList}" status="i" var="groupementInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${groupementInstance.id}">${fieldValue(bean: groupementInstance, field: "description")}</g:link></td>
+						<td><g:link action="show" id="${groupementInstance.id}">${fieldValue(bean: groupementInstance, field: "intitule")}</g:link></td>
 					
-						<td>${fieldValue(bean: groupementInstance, field: "intitule")}</td>
+						<td>${fieldValue(bean: groupementInstance, field: "description")}</td>
 					
 						<td>${fieldValue(bean: groupementInstance, field: "typeGroup")}</td>
 					
