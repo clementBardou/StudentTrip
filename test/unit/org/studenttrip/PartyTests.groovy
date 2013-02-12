@@ -7,5 +7,4 @@ class PartyTests {
 	void testSomething() {
 	
   }
-
 }

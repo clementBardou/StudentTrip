@@ -100,7 +100,7 @@
 				</ul>
 				</sec:ifNotLoggedIn>
 				<sec:ifLoggedIn>
-					<g:link controller="Photo" action="create">Creer une Photo</g:link>
+					<g:link controller="Events" action="create">Creer un Event</g:link>
 					
 					
 					

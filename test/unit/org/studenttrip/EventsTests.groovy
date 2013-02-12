@@ -13,18 +13,16 @@ class EventsTests extends GrailsUnitTestCase {
 	protected void setUp () {
 		super.setUp()
 		mockForConstraintsTests(Events)
-		User coOrg = new User(username : "narjiss",password:"admin",sex:"F");
+		User coOrg = new User(username : "narjiss",password:"admin",enabled: true);
 		Adresse adr = new Adresse();
 		
 		event = new Events(
 			intitule :"white and black",
 			description : "soiree a theme",
-			dateDebut :  Date.parse("dd-MM-yyyy","31-12-2010") ,
-			dateFin :  Date.parse("dd-MM-yyyy","31-12-2010") ,
-			heureDebut:  Date.parse("HH:mm:ss","20:00:00"),			
-			heureFin: Date.parse("HH:mm:ss","20:00:00"),
-			organisateur: new User(username : "narjiss",password:"admin",sex:"F"),
-			co_organisateur:new User(username : "narjiss",password:"admin",sex:"F"),
+			dateDebut :  Date.parse("dd-MM-yyyy HH:mm","31-12-2010 20:00") ,
+			dateFin :  Date.parse("dd-MM-yyyy HH:mm","31-12-2010 20:00") ,
+			organisateur: new User(username : "narjiss",password:"admin",enabled: true),
+			co_organisateur:new User(username : "narjiss",password:"admin",enabled: true),
 			lieu:new Adresse(),
 			participants:[],
 			photos:[]
@@ -65,18 +63,6 @@ class EventsTests extends GrailsUnitTestCase {
 		assert !event.validate()
 	}
 		
-	void testNotNullConstraintsHeureDebut() {
-		assert event.validate()
-		event.heureDebut = null
-		//intitule est vide
-		assert !event.validate()
-	}	
-	void testNotNullConstraintsHeureFin() {
-		assert event.validate()
-		event.heureFin = null
-		//intitule est vide
-		assert !event.validate()
-	}
 	void testNotNullConstraintsLieu() {
 		assert event.validate()
 		event.lieu = null
@@ -89,12 +75,10 @@ class EventsTests extends GrailsUnitTestCase {
 		Events eventTwo = new Events(
 			intitule :"white and black",
 			description : "soiree a theme",
-			dateDebut :  Date.parse("dd-MM-yyyy","31-12-2010") ,
-			dateFin :  Date.parse("dd-MM-yyyy","31-12-2010") ,
-			heureDebut:  Date.parse("HH:mm:ss","20:00:00"),
-			heureFin: Date.parse("HH:mm:ss","20:00:00"),
-			organisateur: new User(username : "narjiss",password:"admin",sex:"F"),
-			co_organisateur:new User(username : "narjiss",password:"admin",sex:"F"),
+			dateDebut :  Date.parse("dd-MM-yyyy HH:mm","31-12-2010 20:00") ,
+			dateFin :  Date.parse("dd-MM-yyyy HH:mm","31-12-2010 20:00") ,
+			organisateur: new User(username : "narjiss",password:"admin",enabled: true),
+			co_organisateur:new User(username : "narjiss",password:"admin",enabled: true),
 			lieu:new Adresse(),
 			participants:[],
 			photos:[]
@@ -103,12 +87,10 @@ class EventsTests extends GrailsUnitTestCase {
 		Events eventThree = new Events(
 			intitule :"Black and red",
 			description : "soiree a theme",
-			dateDebut :  Date.parse("dd-MM-yyyy","01-02-2010") ,
-			dateFin :  Date.parse("dd-MM-yyyy","02-02-2010") ,
-			heureDebut:  Date.parse("HH:mm:ss","20:00:00"),
-			heureFin: Date.parse("HH:mm:ss","20:00:00"),
-			organisateur: new User(username : "narjiss",password:"admin",sex:"F"),
-			co_organisateur:new User(username : "narjiss",password:"admin",sex:"F"),
+			dateDebut :  Date.parse("dd-MM-yyyy HH:mm","01-02-2010 20:00") ,
+			dateFin :  Date.parse("dd-MM-yyyy HH:mm","02-02-2010 20:00") ,
+			organisateur: new User(username : "narjiss",password:"admin",enabled: true),
+			co_organisateur:new User(username : "narjiss",password:"admin",enabled: true),
 			lieu:new Adresse(),
 			participants:[],
 			photos:[]

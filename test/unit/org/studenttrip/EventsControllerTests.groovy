@@ -1,14 +1,13 @@
 package org.studenttrip
 
+import grails.test.GrailsUnitTestCase
 
+class EventsControllerTests extends GrailsUnitTestCase {
 
-import org.junit.*
-import grails.test.mixin.*
-
-@TestFor(EventsController)
-@Mock(Events)
-class EventsControllerTests {
-
+	void testSomething() {
+		
+	}
+	/**
     def populateValidParams(params) {
         assert params != null
         // TODO: Populate valid properties like...
@@ -152,4 +151,5 @@ class EventsControllerTests {
         assert Events.get(events.id) == null
         assert response.redirectedUrl == '/events/list'
     }
+    **/
 }

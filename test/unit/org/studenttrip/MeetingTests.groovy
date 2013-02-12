@@ -5,6 +5,5 @@ package org.studenttrip
 class MeetingTests {
 
 	void testSomething() {
-	
-  }
+	}
 }

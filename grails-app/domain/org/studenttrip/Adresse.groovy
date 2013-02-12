@@ -1,7 +1,5 @@
 package org.studenttrip
 
-import org.hibernate.loader.custom.Return;
-
 class Adresse {
 
 	String rue
@@ -13,7 +11,7 @@ class Adresse {
 		rue(blank:false, nullable:false)
 		nom(blank:false, nullable:false)
 		ville(blank:false, nullable:false)
-		code_postal(nullable:false)
+		code_postal(max:99999)
 	}
 
 	@Override
