@@ -30,7 +30,7 @@ class ParticipationTests extends GrailsUnitTestCase {
 		assertFalse(participation.validate())
 	}
 	
-	void TestEquals(){
+	void testEquals(){
 		assertTrue(participation.validate())
 		assertTrue(participation.equals(participation2))
 		assertFalse(participation2.equals(participation3))
